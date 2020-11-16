@@ -1,0 +1,40 @@
+<div class="lista">
+  <table class="table table-striped">
+    <tr style="text-align: center;">
+      <th>Tipo de documento</th>
+      <th>Nro. de documento</th>
+      <th>Nombre Completo</th>
+      <th>Función</th>
+      <th><button class="btn btn-danger"  (click)="agregar()">Agregar</button></th>
+    </tr>
+    <tr *ngFor="let item of empleados" style="text-align: center;">
+      <td>{{item.tipoDocumento  | tipodocumento}}</td>
+      <td>{{item.documento}}</td>
+      <td>{{item.fullName}}</td>
+      <td>{{item.function}}</td>
+      <td><a title="Consultar Jefe" (click)="consultarJefe(item)"><i class="fa fa-info-circle"></i></a></td>
+    </tr>
+  </table>
+</div>
+
+<div class="modal bs-example-modal-lg in" id="modalJefe" tabindex="-1" role="dialog" aria-labelledby="modalJefeLabel"
+  aria-hidden="true" style="position: fixed;">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="firma">Jefe</h2>
+      </div>
+      <div class="modal-body">
+        <div style="text-align: justify">
+          {{jefe}}
+        </div>
+        <br>
+
+        <br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

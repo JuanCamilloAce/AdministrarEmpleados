@@ -1,0 +1,19 @@
+.title {
+  height: 200px;
+  width: 100%;
+  background-color: slategray;
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
+  display: grid;
+  align-items: center;
+  text-align:  center;
+}
+
+.center {
+  padding-left: 20%;
+  padding-right: 20%;
+  display: grid;
+  align-content: center;
+  padding-top: 50px;
+}

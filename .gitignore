@@ -1,0 +1,148 @@
+######################
+# Maven
+######################
+/target
+/log
+
+######################
+# Compilacion general
+######################
+/tmp
+/out-tsc
+
+######################
+# Node
+######################
+/node/
+node_tmp/
+node_modules/
+npm-debug.log.*
+
+######################
+# IDEs general
+######################
+.c9/
+*.sublime-workspace
+
+######################
+# Intellij
+######################
+.idea/
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+
+######################
+# IDES Netbeans
+######################
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+######################
+# IDES VSCode
+######################
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+######################
+# Eclipse
+######################
+*.pydevproject
+.project
+.metadata
+tmp/
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.factorypath
+/src/main/resources/rebel.xml
+
+# External tool builders
+.externalToolBuilders/**
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+######################
+# Package Files
+######################
+*.jar
+*.war
+*.ear
+*.db
+
+######################
+# General
+######################
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+.svn
+
+######################
+# Archivos del sistema
+######################
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+######################
+# Directorios general
+######################
+/bin/
+/deploy/
+
+######################
+# Logs
+######################
+*.log
+
+######################
+# Otros
+######################
+*.class
+*.*~
+*~
+.merge_file*
+
+######################
+# ESLint
+######################
+.eslintcache
+
+######################
+# Sonar
+######################
+.sonar
+
+######################
+# Upload and Download batch
+######################
+.bat

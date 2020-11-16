@@ -1,0 +1,97 @@
+<div class="card">
+  <div class="card-header bg-secondary">
+    <div class="row">
+      <div class="col negrita">
+        <h3>Registrar Empleado</h3>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="error">{{mensaje}}</div>
+    <form #formRegistrar="ngForm">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12" [ngClass]="{'error' : selTipoDoc.invalid && formularioEnviado}">
+              <label>Tipo de documento:</label>
+              <select name="selTipoDoc" class="form-control obligatorio" #selTipoDoc="ngModel" required
+                [(ngModel)]="empleado.tipoDocumento">
+                <option [ngValue]="undefined" selected>Seleccione...</option>
+                <option value="C">Cédula de Ciudadanía</option>
+                <option value="N">Nit</option>
+                <option value="P">Pasaporte</option>
+              </select>
+              <div *ngIf="selTipoDoc.invalid && formularioEnviado" class="control-label">
+                <div *ngIf="selTipoDoc.errors.required">Campo requerido</div>
+              </div>
+            </div>
+          </div>
+          <div class="row" [ngClass]="{'error' : documento.invalid && formularioEnviado}">
+            <div class="col-12">
+              <label for="documento">Documento:</label>
+              <input class="form-control obligatorio" name="documento" #documento="ngModel" required
+                [(ngModel)]="empleado.documento" />
+                <div *ngIf="documento.invalid && formularioEnviado" class="control-label">
+                  <div *ngIf="documento.errors.required">Campo requerido</div>
+                </div>
+            </div>
+          </div>
+          <div class="row" [ngClass]="{'error' : nombre.invalid && formularioEnviado}">
+            <div class="col-12">
+              <label for="nombre">Nombre Completo:</label>
+              <input class="form-control obligatorio" name="nombre" #nombre="ngModel" required [(ngModel)]="empleado.fullName" />
+              <div *ngIf="nombre.invalid && formularioEnviado" class="control-label">
+                <div *ngIf="nombre.errors.required">Campo requerido</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12" [ngClass]="{'error' : funcion.invalid && formularioEnviado}">
+              <label for="funcion">Función:</label>
+              <input class="form-control obligatorio" name="funcion" #funcion="ngModel" required
+                [(ngModel)]="empleado.function" />
+                <div *ngIf="funcion.invalid && formularioEnviado" class="control-label">
+                  <div *ngIf="funcion.errors.required">Campo requerido</div>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12" [ngClass]="{'error' : selTipoDocJefe.invalid && formularioEnviado}">
+              <label>Tipo de documento Jefe:</label>
+              <select name="selTipoDocJefe" class="form-control obligatorio" #selTipoDocJefe="ngModel" [required]="requiereTipoDocJefe"
+                [(ngModel)]="jefe.tipoDocumento" (change)="regresarEstado()">
+                <option [ngValue]="undefined" selected>Seleccione...</option>
+                <option value="C">Cédula de Ciudadanía</option>
+                <option value="N">Nit</option>
+                <option value="P">Pasaporte</option>
+              </select>
+              <div *ngIf="selTipoDocJefe.invalid && formularioEnviado" class="control-label">
+                <div *ngIf="selTipoDocJefe.errors.required">Campo requerido si se ingresa documento de jefe.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row" [ngClass]="{'error' : documentoJefe.invalid && formularioEnviado}">
+            <div class="col-12">
+              <label for="documentoJefe">Documento Jefe:</label>
+              <input class="form-control obligatorio" name="documentoJefe" #documentoJefe="ngModel" [required]="requiereDocJefe"
+                [(ngModel)]="jefe.documento" (ngModelChange)="regresarEstado()" />
+                <div *ngIf="documentoJefe.invalid && formularioEnviado" class="control-label">
+                  <div *ngIf="documentoJefe.errors.required">Campo requerido si se ingresa tipo de documento jefe.</div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding-top: 5px;">
+        <div class="col-12 text-right">
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary" (click)="registrar()" [disabled]="spinner">
+              <div class="spinner-border text-danger" *ngIf="spinner" role="status" style="width: 1rem; height: 1rem;">
+              </div>
+              <div *ngIf="!spinner">Registrar</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
