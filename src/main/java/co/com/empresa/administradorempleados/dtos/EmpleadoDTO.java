@@ -2,7 +2,7 @@
  * EmpleadoDTO
  * VERSION 1.0.0
  * 15/11/2020
- * COPYRIGHT © 2019 REGISTRO UNICO NACIONAL DE TRANSITO
+ * COPYRIGHT © 2019 JUAN ACEVEDO
  **/
 package co.com.empresa.administradorempleados.dtos;
 
